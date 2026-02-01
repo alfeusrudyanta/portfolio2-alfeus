@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Anton, Bonheur_Royale } from 'next/font/google';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -15,6 +15,20 @@ const montserrat = Montserrat({
   variable: '--font-monserrat',
 });
 
+const anton = Anton({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal'],
+  variable: '--font-anton',
+});
+
+const bonheurRoyale = Bonheur_Royale({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal'],
+  variable: '--font-bonheurRoyale',
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,6 +39,8 @@ export default function RootLayout({
       <body
         className={cn(
           montserrat.className,
+          anton.variable,
+          bonheurRoyale.variable,
           'md:text-md-regular text-sm-regular bg-white text-neutral-950 antialiased'
         )}
       >

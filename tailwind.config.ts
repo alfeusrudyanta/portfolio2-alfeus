@@ -58,6 +58,10 @@ export default {
           to: { transform: 'translateY(calc(-100% - var(--gap)))' },
         },
       },
+      fontFamily: {
+        anton: ['var(--font-anton)', 'sans-serif'],
+        bonheurRoyale: ['var(--font-bonheurRoyale)', 'sans-serif'],
+      },
     },
   },
   plugins: [customTextPlugin],

@@ -37,7 +37,7 @@ export const WhyChooseMeCard: React.FC<WhyChooseMeCardProps> = ({
             height={45}
             width={45}
             className={cn(
-              isMe ? 'w-full pt-2 pl-2 md:pl-3' : 'size-11.25 md:size-15'
+              isMe ? 'w-full pt-2 pl-1 md:pl-2' : 'size-11.25 md:size-15'
             )}
           />
         </div>
