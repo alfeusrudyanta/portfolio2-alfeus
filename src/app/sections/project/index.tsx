@@ -6,7 +6,7 @@ import { ProjectCard } from './project-card';
 
 export const Project = () => {
   return (
-    <Section id='project'>
+    <Section id='projects'>
       {/* Title */}
       <div className='flex w-full flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-0'>
         <div className='flex flex-col gap-2 md:max-w-171.5'>

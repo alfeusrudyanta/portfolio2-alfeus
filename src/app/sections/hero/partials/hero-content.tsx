@@ -1,12 +1,13 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const HeroContent = () => {
   return (
     <div className='flex flex-col gap-6.25 md:contents'>
       {/* Introduction */}
-      <div className='mx-auto flex w-full max-w-100 flex-col gap-2 md:mx-0 md:max-w-80 md:gap-3.5 lg:max-w-112.75'>
+      <div className='relative z-20 mx-auto flex w-full max-w-100 flex-col gap-2 md:mx-0 md:max-w-80 md:gap-3.5 lg:max-w-112.75'>
         <div className='border-primary-300 flex size-12 items-center justify-center rounded-full border md:size-15.75'>
           <Image
             src='/icons/hero-mic.svg'
@@ -28,7 +29,7 @@ export const HeroContent = () => {
       </div>
 
       {/* Rating */}
-      <div className='mx-auto flex w-full max-w-100 flex-col gap-5 md:absolute md:right-30 md:bottom-54.5 md:max-w-55.5'>
+      <div className='relative z-20 mx-auto flex w-full max-w-100 flex-col gap-5 md:absolute md:right-30 md:bottom-54.5 md:max-w-55.5'>
         <div className='flex justify-between gap-5 md:flex-col'>
           {/* Content */}
           <div className='flex flex-col gap-0.75'>
@@ -85,15 +86,17 @@ export const HeroContent = () => {
           </div>
         </div>
 
-        <Button className='bg-secondary-100 hover:bg-secondary-100/90 h-12 justify-between md:h-14'>
-          <span className='md:text-md-semibold text-sm-semibold text-neutral-950'>
-            Contact Me
-          </span>
+        <Link href='/#contact' className='cursor-pointer'>
+          <Button className='bg-secondary-100 hover:bg-secondary-100/90 h-12 cursor-pointer justify-between md:h-14'>
+            <span className='md:text-md-semibold text-sm-semibold text-neutral-950'>
+              Contact Me
+            </span>
 
-          <div className='flex size-9 items-center justify-center gap-2 rounded-full bg-neutral-950 p-2'>
-            <ArrowRight className='size-5' />
-          </div>
-        </Button>
+            <div className='flex size-9 items-center justify-center gap-2 rounded-full bg-neutral-950 p-2'>
+              <ArrowRight className='size-5' />
+            </div>
+          </Button>
+        </Link>
       </div>
     </div>
   );

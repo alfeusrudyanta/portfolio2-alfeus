@@ -1,4 +1,4 @@
-import { Approach } from './sections/approach';
+import { About } from './sections/about';
 import { Contact } from './sections/contact';
 import { Experience } from './sections/experience';
 import { FAQ } from './sections/faq';
@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <Header />
       <Hero />
-      <Approach />
+      <About />
       <Skill />
       <TechStack />
       <WhyChooseMe />

@@ -6,7 +6,7 @@ export const HeroOverlay = () => {
   return (
     <>
       {/* Icon Overlay */}
-      <div className='border-primary-300 absolute bottom-126.75 left-30 hidden flex-col gap-5.25 rounded-full border px-5.25 py-8 md:flex'>
+      <div className='border-primary-300 absolute bottom-126.75 left-30 z-10 hidden flex-col gap-5.25 rounded-full border px-5.25 py-8 md:flex'>
         {HERO_ICONS_DATA.map((icon) => (
           <div
             key={icon.alt}
@@ -24,22 +24,22 @@ export const HeroOverlay = () => {
       </div>
 
       {/* Image Overlay */}
-      <div className='absolute bottom-0 left-1/2 -z-10 -translate-x-1/2'>
+      <div className='absolute bottom-0 left-1/2 z-10 -translate-x-1/2'>
         {/* Text */}
         <div className='relative'>
-          <span className='text-secondary-100 font-anton absolute top-13 left-1/2 -z-40 h-auto w-auto -translate-x-1/2 text-[clamp(6.20rem,12.50vw,11.50rem)]'>
+          <span className='text-secondary-100 font-anton absolute top-13 left-1/2 -z-10 h-auto w-auto -translate-x-1/2 text-[clamp(6.20rem,12.50vw,11.50rem)]'>
             FRONTEND
           </span>
 
           <span
-            className='text-secondary-100 font-anton absolute left-1/2 -z-40 h-auto w-auto -translate-x-1/2 text-[clamp(5.65rem,11.48vw,10.50rem)]'
+            className='text-secondary-100 font-anton absolute left-1/2 -z-10 h-auto w-auto -translate-x-1/2 text-[clamp(5.65rem,11.48vw,10.50rem)]'
             style={{ top: 'clamp(9.40rem, 17vw, 14rem)' }}
           >
             DEVELOPER
           </span>
 
           <span
-            className='font-anton absolute left-1/2 z-10 h-auto w-auto -translate-x-1/2 text-[clamp(5.65rem,11.48vw,10.50rem)]'
+            className='font-anton absolute left-1/2 h-auto w-auto -translate-x-1/2 text-[clamp(5.65rem,11.48vw,10.50rem)]'
             style={{
               top: 'clamp(9.40rem, 17vw, 14rem)',
               WebkitTextStroke: '1px #F3B64C',
@@ -50,7 +50,7 @@ export const HeroOverlay = () => {
           </span>
 
           <span
-            className='font-bonheurRoyale absolute z-10 -rotate-12 text-[clamp(4.04rem,7.86vw,7.08rem)] text-white'
+            className='font-bonheurRoyale absolute -rotate-12 text-[clamp(4.04rem,7.86vw,7.08rem)] text-white'
             style={{
               top: 'clamp(-2.7rem, calc(-8.8vw + 5rem), 2.5rem)',
               left: 'clamp(-6.99rem, calc(-12.9vw + 5rem), 0rem)',
@@ -78,7 +78,7 @@ export const HeroOverlay = () => {
         <img
           src='/images/shared-profile-picture.png'
           alt='Profile Picture'
-          className='h-auto w-auto'
+          className='-z-50 h-auto w-auto'
           style={{
             maxWidth: 'clamp(23.44rem, 42.36vw, 38.13rem)',
             maxHeight: 'clamp(28.25rem, 51.04vw, 45.94rem)',
@@ -88,10 +88,22 @@ export const HeroOverlay = () => {
         <img
           src='/icons/hero-star.svg'
           alt='Star'
-          className='absolute -z-50 h-auto w-auto'
+          className='absolute -z-50 h-auto w-auto rotate-15 transition-transform md:rotate-0'
           style={{
             bottom: 'clamp(13.79rem, 34.08vw, 30.88rem)',
             left: 'clamp(-7.09rem, calc(-12.9vw + 1rem), -2.5rem)',
+            maxWidth: 'clamp(5.63rem, 13.89vw, 12.5rem)',
+            maxHeight: 'clamp(5.63rem, 16.74vw, 15.06rem)',
+          }}
+        />
+
+        <img
+          src='/icons/hero-star2.svg'
+          alt='Star'
+          className='absolute -z-50 h-auto w-auto -rotate-60 transition-transform md:rotate-0'
+          style={{
+            bottom: 'clamp(3.63rem, 6.7vw, 7.3rem)',
+            left: 'clamp(17.59rem, 37.8vw, 31.5rem)',
             maxWidth: 'clamp(5.63rem, 13.89vw, 12.5rem)',
             maxHeight: 'clamp(5.63rem, 16.74vw, 15.06rem)',
           }}

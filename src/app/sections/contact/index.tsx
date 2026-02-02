@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 export const Contact = () => {
   return (
-    <Section className='md:flex-row md:items-start md:p-30'>
+    <Section id='contact' className='md:flex-row md:items-start md:p-30'>
       {/* Title */}
       <div className='flex w-full flex-[4.7] flex-col gap-6 md:gap-10'>
         <div className='flex flex-col gap-2'>
