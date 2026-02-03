@@ -6,6 +6,7 @@ import {
 } from '@/components/ui/dialog';
 import { DialogProps } from '../types';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export const SuccessOverlay: React.FC<DialogProps> = ({
   isOpen,
@@ -22,9 +23,11 @@ export const SuccessOverlay: React.FC<DialogProps> = ({
 
         {/* Icon */}
         <div className='bg-secondary-100 relative h-45.75 rounded-tl-2xl rounded-tr-2xl md:h-56.25'>
-          <img
+          <Image
             src='/icons/contact-success.svg'
             alt='Success Icon'
+            height={293}
+            width={262}
             className='absolute -bottom-1 left-1/2 h-61.75 w-full -translate-x-1/2 md:-bottom-2 md:h-73.25'
           />
         </div>

@@ -91,9 +91,11 @@ export const Contact = () => {
           className='relative flex flex-col gap-5 rounded-2xl bg-white p-4 shadow-[0_0_28px_0_#C5C5C540]'
         >
           {/* Image */}
-          <img
+          <Image
             src='/icons/contact-hello.svg'
             alt='Contact Me'
+            height={170}
+            width={192}
             className='absolute -top-40 left-1/2 h-42.5 w-48 shrink-0 -translate-x-1/2'
           />
 
