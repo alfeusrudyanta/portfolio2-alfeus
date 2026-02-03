@@ -1,3 +1,4 @@
+import { Counter } from '@/components/shared/counter';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -33,9 +34,7 @@ export const HeroContent = () => {
         <div className='flex justify-between gap-5 md:flex-col'>
           {/* Content */}
           <div className='flex flex-col gap-0.75'>
-            <span className='display-md-bold md:display-2xl-bold tracking-[-0.02em] text-white'>
-              2+
-            </span>
+            <Counter duration={0.3} from={0} to={2} />
 
             <span className='text-xs-semibold md:text-md-semibold tracking-[-0.03em] text-white md:tracking-normal'>
               Years Experience
@@ -47,9 +46,7 @@ export const HeroContent = () => {
 
           {/* Content */}
           <div className='flex flex-col gap-0.75'>
-            <span className='display-md-bold md:display-2xl-bold tracking-[-0.02em] text-white'>
-              99%
-            </span>
+            <Counter duration={0.3} from={0} to={99} suffix='%' />
 
             <span className='text-xs-semibold md:text-md-semibold tracking-[-0.03em] text-white md:tracking-normal'>
               Client Satisfaction
@@ -62,9 +59,7 @@ export const HeroContent = () => {
         <div className='flex justify-between gap-5 md:flex-col'>
           {/* Content */}
           <div className='flex flex-col gap-0.75'>
-            <span className='display-md-bold md:display-2xl-bold tracking-[-0.02em] text-white'>
-              3
-            </span>
+            <Counter duration={0.3} from={0} to={3} />
 
             <span className='text-xs-semibold md:text-md-semibold tracking-[-0.03em] text-white md:tracking-normal'>
               Project Delivered
@@ -76,9 +71,7 @@ export const HeroContent = () => {
 
           {/* Content */}
           <div className='flex flex-col gap-0.75'>
-            <span className='display-md-bold md:display-2xl-bold tracking-[-0.02em] text-white'>
-              50
-            </span>
+            <Counter duration={0.3} from={0} to={50} />
 
             <span className='text-xs-semibold md:text-md-semibold tracking-[-0.03em] text-white md:tracking-normal'>
               Clients Worldwide

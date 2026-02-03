@@ -1,8 +1,26 @@
+'use client';
+
 import { Mouse } from 'lucide-react';
 import Image from 'next/image';
 import { HERO_ICONS_DATA } from '../constants';
+import { motion } from 'motion/react';
 
 export const HeroOverlay = () => {
+  const glossyVariants = {
+    initial: {
+      filter: 'brightness(1) contrast(1) saturate(1)',
+      scale: 0.95,
+    },
+    animate: {
+      filter: [
+        'brightness(1) contrast(1) saturate(1)',
+        'brightness(1.3) contrast(1.2) saturate(1.3)',
+        'brightness(1) contrast(1) saturate(1)',
+      ],
+      scale: [1, 1.05, 1],
+    },
+  };
+
   return (
     <>
       {/* Icon Overlay */}
@@ -85,7 +103,7 @@ export const HeroOverlay = () => {
           }}
         />
 
-        <img
+        <motion.img
           src='/icons/hero-star.svg'
           alt='Star'
           className='absolute -z-50 h-auto w-auto rotate-15 transition-transform md:rotate-0'
@@ -95,9 +113,18 @@ export const HeroOverlay = () => {
             maxWidth: 'clamp(5.63rem, 13.89vw, 12.5rem)',
             maxHeight: 'clamp(5.63rem, 16.74vw, 15.06rem)',
           }}
+          variants={glossyVariants}
+          initial='initial'
+          animate='animate'
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            repeatType: 'mirror',
+          }}
         />
 
-        <img
+        <motion.img
           src='/icons/hero-star2.svg'
           alt='Star'
           className='absolute -z-50 h-auto w-auto -rotate-60 transition-transform md:rotate-0'
@@ -106,6 +133,16 @@ export const HeroOverlay = () => {
             left: 'clamp(17.59rem, 37.8vw, 31.5rem)',
             maxWidth: 'clamp(5.63rem, 13.89vw, 12.5rem)',
             maxHeight: 'clamp(5.63rem, 16.74vw, 15.06rem)',
+          }}
+          variants={glossyVariants}
+          initial='initial'
+          animate='animate'
+          transition={{
+            delay: 1,
+            duration: 2.5,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            repeatType: 'mirror',
           }}
         />
       </div>
