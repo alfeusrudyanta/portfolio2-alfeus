@@ -73,7 +73,7 @@ export const Header = () => {
                   onClick={handleOpenMenu}
                   className='group w-full py-2'
                 >
-                  <span className='text-md-medium group-hover:text-primary-300 tracking-[-0.03em] text-white outline-0 transition-all'>
+                  <span className='text-md-medium group-hover:text-primary-300/90 tracking-[-0.03em] text-white outline-0 transition-all'>
                     {data.name}
                   </span>
                 </Link>
@@ -86,7 +86,7 @@ export const Header = () => {
         <div className='hidden w-full items-center justify-between gap-6 md:flex'>
           {HEADER_DATA.map((data) => (
             <Link href={data.link} key={data.name} className='group h-full p-2'>
-              <span className='text-md-medium group-hover:text-primary-300/70 tracking-[-0.03em] text-white outline-0 transition-all'>
+              <span className='text-md-medium group-hover:text-primary-300/90 tracking-[-0.03em] text-white outline-0 transition-all'>
                 {data.name}
               </span>
             </Link>
