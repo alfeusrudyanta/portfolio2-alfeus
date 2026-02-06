@@ -3,28 +3,20 @@
 import { Mouse } from 'lucide-react';
 import Image from 'next/image';
 import { HERO_ICONS_DATA } from '../constants';
+import { glossyVariants, HeaderVariants } from '../variants';
 import { motion } from 'motion/react';
 
 export const HeroOverlay = () => {
-  const glossyVariants = {
-    initial: {
-      filter: 'brightness(1) contrast(1) saturate(1)',
-      scale: 0.95,
-    },
-    animate: {
-      filter: [
-        'brightness(1) contrast(1) saturate(1)',
-        'brightness(1.3) contrast(1.2) saturate(1.3)',
-        'brightness(1) contrast(1) saturate(1)',
-      ],
-      scale: [1, 1.05, 1],
-    },
-  };
-
   return (
     <>
       {/* Icon Overlay */}
-      <div className='border-primary-300 absolute bottom-126.75 left-30 z-10 hidden flex-col gap-5.25 rounded-full border px-5.25 py-8 md:flex'>
+      <motion.div
+        variants={HeaderVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, amount: 0.2 }}
+        className='border-primary-300 absolute bottom-126.75 left-30 z-10 hidden flex-col gap-5.25 rounded-full border px-5.25 py-8 md:flex'
+      >
         {HERO_ICONS_DATA.map((icon) => (
           <div
             key={icon.alt}
@@ -39,10 +31,16 @@ export const HeroOverlay = () => {
             />
           </div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Image Overlay */}
-      <div className='absolute bottom-0 left-1/2 z-10 -translate-x-1/2'>
+      <motion.div
+        variants={HeaderVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, amount: 0.2 }}
+        className='absolute bottom-0 left-1/2 z-10 -translate-x-1/2'
+      >
         {/* Text */}
         <div className='relative'>
           <span className='text-secondary-100 font-anton absolute top-13 left-1/2 -z-10 h-auto w-auto -translate-x-1/2 text-[clamp(6.20rem,12.50vw,11.50rem)]'>
@@ -117,7 +115,7 @@ export const HeroOverlay = () => {
           initial='initial'
           animate='animate'
           transition={{
-            duration: 2.5,
+            duration: 2,
             repeat: Infinity,
             ease: 'easeInOut',
             repeatType: 'mirror',
@@ -139,13 +137,13 @@ export const HeroOverlay = () => {
           animate='animate'
           transition={{
             delay: 1,
-            duration: 2.5,
+            duration: 2,
             repeat: Infinity,
             ease: 'easeInOut',
             repeatType: 'mirror',
           }}
         />
-      </div>
+      </motion.div>
     </>
   );
 };

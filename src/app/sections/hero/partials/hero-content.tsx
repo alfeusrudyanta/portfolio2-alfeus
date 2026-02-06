@@ -1,14 +1,24 @@
+'use client';
+
 import { Counter } from '@/components/shared/counter';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { HeaderVariants } from '../variants';
 
 export const HeroContent = () => {
   return (
     <div className='flex flex-col gap-6.25 md:contents'>
       {/* Introduction */}
-      <div className='relative z-20 mx-auto flex w-full max-w-100 flex-col gap-2 md:mx-0 md:max-w-80 md:gap-3.5 lg:max-w-112.75'>
+      <motion.div
+        variants={HeaderVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, amount: 0.2 }}
+        className='relative z-20 mx-auto flex w-full max-w-100 flex-col gap-2 md:mx-0 md:max-w-80 md:gap-3.5 lg:max-w-112.75'
+      >
         <div className='border-primary-300 flex size-12 items-center justify-center rounded-full border md:size-15.75'>
           <Image
             src='/icons/hero-mic.svg'
@@ -27,10 +37,16 @@ export const HeroContent = () => {
           a frontend developer passionate about creating seamless digital
           experiences that are fast, responsive, and user-friendly.
         </span>
-      </div>
+      </motion.div>
 
       {/* Rating */}
-      <div className='relative z-20 mx-auto flex w-full max-w-100 flex-col gap-5 md:absolute md:right-30 md:bottom-54.5 md:max-w-55.5'>
+      <motion.div
+        variants={HeaderVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, amount: 0.2 }}
+        className='relative z-20 mx-auto flex w-full max-w-100 flex-col gap-5 md:absolute md:right-30 md:bottom-54.5 md:max-w-55.5'
+      >
         <div className='flex justify-between gap-5 md:flex-col'>
           {/* Content */}
           <div className='flex flex-col gap-0.75'>
@@ -90,7 +106,7 @@ export const HeroContent = () => {
             </div>
           </Button>
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };

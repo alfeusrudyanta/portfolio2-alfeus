@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants } from 'motion/react';
 
 const SectionVariants: Variants = {
   hidden: { scale: 0.95, opacity: 0 },
